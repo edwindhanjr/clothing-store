@@ -1,12 +1,15 @@
 import React from 'react';
-import './collection_preview.styles.scss';
+import { withRouter } from 'react-router-dom';
+
 import CollectionItem from '../collection-item/collection_item';
+
+import {CollectionPreviewContainer, TitleContainer, PreviewContainer } from './collection_preview.styles';
 
 
 const CollectionPreview =({title, items})=>(
-    <div className="collection-preview">
-        <h1 className="title">{title}</h1>
-        <div className="preview">
+    <CollectionPreviewContainer>
+        <TitleContainer>{title}</TitleContainer>
+        <PreviewContainer>
         {
             items
             .filter((item,idx)=>idx<4)
@@ -14,8 +17,8 @@ const CollectionPreview =({title, items})=>(
                 <CollectionItem key={item.id} item={item} />
             ))
         }
-        </div>
-    </div>
+        </PreviewContainer>
+    </CollectionPreviewContainer>
 );
 
-export default CollectionPreview;
+export default withRouter(CollectionPreview);
