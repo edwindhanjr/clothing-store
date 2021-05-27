@@ -1,5 +1,6 @@
 import React from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
+import './App.css';
 import { connect } from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 import Header from './components/header/header';
@@ -7,7 +8,6 @@ import HomePage from './pages/homepage/homepage';
 import ShopPage from './pages/shop/shop';
 import SignInAndSignUp from './pages/sign-in-and-sign-up/sign_in_and_sign_up';
 import CheckoutPage from './pages/checkout/checkout';
-import './App.css';
 import {auth, createUserProfileDocument} from './firebase/firebase.utils';
 import {setCurrentUser} from './Redux/user/user_actions';
 import { selectCurrentUser} from './Redux/user/user_selector';
